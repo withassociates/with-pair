@@ -9,3 +9,4 @@ Feature: Booking a session
     And I click "Book session"
     Then I see "Thank you, Tom will be in touch"
     And Tom gets an email notification of the booking
+    And I get an email notification of the booking

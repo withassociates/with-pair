@@ -41,7 +41,16 @@ step "I see :content" do |content|
 end
 
 step "Tom gets an email notification of the booking" do
-  email = ActionMailer::Base.deliveries.last
-  expect(email.to).to include('thomas@withassociates.com')
+  email = ActionMailer::Base.deliveries.find { |delivery|
+    delivery.to.include?('thomas@withassociates.com')
+  }
+  expect(email).not_to be_nil
   expect(email.decoded).to include('jo.smith')
+end
+
+step "I get an email notification of the booking" do
+  email = ActionMailer::Base.deliveries.find { |delivery|
+    delivery.to.include?('jo.smith@example.com')
+  }
+  expect(email).not_to be_nil
 end

@@ -9,7 +9,8 @@ class BookingsController < ApplicationController
     @booking = @session.bookings.new(booking_params)
 
     if @booking.save
-      PersonMailer.booking_notification(@booking).deliver
+      BookingMailer.teacher_notification(@booking).deliver
+      BookingMailer.student_notification(@booking).deliver
       redirect_to [@session, @booking]
     else
       render :new

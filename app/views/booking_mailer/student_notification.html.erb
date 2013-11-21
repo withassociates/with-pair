@@ -1,0 +1,15 @@
+<p>Hi <%= @booking.given_name %></p>
+
+<p>You have made a booking on Pair with <%= @person.name%>
+  <%= @session.starts_at.strftime('on %d/%m/%y at %H:%M') %></p>
+
+<dl>
+  <dt>Name</dt>
+  <dd><%= @booking.name %></dd>
+  <dt>Skype</dt>
+  <dd><%= @booking.skype %></dd>
+  <dt>Email</dt>
+  <dd><%= @booking.email %></dd>
+  <dt>Project</dt>
+  <dd><%= @booking.project %></dd>
+</dl>
