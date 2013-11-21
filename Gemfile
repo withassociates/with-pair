@@ -14,6 +14,8 @@ end
 
 group :development do
   gem 'foreman', '~> 0.63.0', require: false
+  gem 'guard-rspec', '~> 4.0.4', require: false
+  gem 'spork-rails', '~> 4.0.0', require: false
 end
 
 group :development, :test do
