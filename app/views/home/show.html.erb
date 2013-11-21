@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Skills</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sessions.each do |s| %>
+      <tr>
+        <td><%= s.person.name %></td>
+        <td><%= s.starts_at.strftime('%d/%m/%y') %></td>
+        <td><%= s.starts_at.strftime('%H:%M') %>–<%= s.ends_at.strftime('%H:%M') %></td>
+        <td></td>
+        <td><%= link_to "Book session", new_session_booking_path(s) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

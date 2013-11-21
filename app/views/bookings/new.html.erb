@@ -1,0 +1,25 @@
+<%= form_for([@session, @booking]) do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, autofocus: true %>
+    <%= @booking.errors[:name].to_sentence %>
+  </div>
+  <div>
+    <%= f.label :skype %>
+    <%= f.text_field :skype %>
+    <%= @booking.errors[:skype].to_sentence %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email, required: true %>
+    <%= @booking.errors[:email].to_sentence %>
+  </div>
+  <div>
+    <%= f.label :project %>
+    <%= f.text_area :project, required: true %>
+    <%= @booking.errors[:project].to_sentence %>
+  </div>
+  <div>
+    <%= f.button "Book session" %>
+  </div>
+<% end %>

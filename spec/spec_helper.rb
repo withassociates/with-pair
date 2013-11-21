@@ -1,13 +1,14 @@
 require 'rubygems'
 require 'spork'
 
+ENV["RAILS_ENV"] ||= 'test'
+
 Spork.prefork do
-  ENV["RAILS_ENV"] ||= 'test'
+  require 'rails/application'
+  Spork.trap_method(Rails::Application::RoutesReloader, :reload!)
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'rspec/autorun'
-
-  Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
   ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
@@ -20,4 +21,5 @@ Spork.prefork do
 end
 
 Spork.each_run do
+  Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 end
