@@ -2,8 +2,9 @@ module ApplicationHelper
   DEFAULT_GRAVATAR_SIZE = 60
 
   def gravatar_tag(email, options = {})
-    options[:size] ||= DEFAULT_GRAVATAR_SIZE
-    image_tag(gravatar_url(email, options[:size]), options)
+    size = options.fetch(:size) { DEFAULT_GRAVATAR_SIZE }
+    options[:size] = "#{size}x#{size}"
+    image_tag(gravatar_url(email, size), options)
   end
 
   def gravatar_url(email, size = DEFAULT_GRAVATAR_SIZE)
