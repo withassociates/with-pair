@@ -10,10 +10,10 @@ class Session < ActiveRecord::Base
   end
 
   def state
-    if bookings.empty?
-      BOOKABLE
-    else
+    if bookings.any?(&:persisted?)
       UNAVAILABLE
+    else
+      BOOKABLE
     end
   end
 

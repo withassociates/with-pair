@@ -1,3 +1,19 @@
+<table class="table sessions">
+  <thead>
+    <tr>
+      <th>Person</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Skills</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <%= render 'sessions/row', s: @session, display_button: false %>
+  </tbody>
+</table>
+
+
 <%= form_for_booking do |f| %>
   <%= f.field :name, required: true, autofocus: true %>
   <%= f.field :skype %>
