@@ -1,0 +1,18 @@
+/*
+ *= require_self
+ *= require_tree .
+ */
+
+.sessions {
+  td {
+    vertical-align: middle !important;
+  }
+
+  img {
+    margin-right: 0.618em;
+  }
+
+  .unavailable {
+    color: #ccc;
+  }
+}

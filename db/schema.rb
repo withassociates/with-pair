@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20131121133210) do
 
   create_table "bookings", force: true do |t|
     t.integer  "session_id"
-    t.string   "name"
+    t.string   "name",       null: false
     t.string   "skype"
-    t.string   "email"
-    t.text     "project"
+    t.string   "email",      null: false
+    t.text     "project",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20131121133210) do
   create_table "people", force: true do |t|
     t.string   "name"
     t.string   "email"
+    t.string   "skills"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

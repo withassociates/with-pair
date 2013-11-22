@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def show
-    @sessions = Session.today
+    @sessions = Session.upcoming
   end
 end

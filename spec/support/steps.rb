@@ -33,7 +33,7 @@ step "I fill in my contact details" do
 end
 
 step "I describe what I want to work on" do
-  fill_in "Project", with: "Foo bar baz " * 14
+  fill_in "Project", with: "Foo bar " * 10
 end
 
 step "I see :content" do |content|

@@ -20,6 +20,7 @@ end
 
 group :development, :test do
   gem 'pry-rails', '~> 0.3.2'
+  gem 'rb-fsevent', '~> 0.9.3'
 end
 
 group :test do

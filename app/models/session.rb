@@ -1,8 +1,23 @@
 class Session < ActiveRecord::Base
+  BOOKABLE = :bookable
+  UNAVAILABLE = :unavailable
+
   belongs_to :person
   has_many :bookings
 
-  def self.today
-    where("starts_at > ? AND ends_at < ?", Time.now, Date.tomorrow)
+  def self.upcoming
+    where("starts_at > NOW()")
+  end
+
+  def state
+    if bookings.empty?
+      BOOKABLE
+    else
+      UNAVAILABLE
+    end
+  end
+
+  def bookable?
+    state == BOOKABLE
   end
 end

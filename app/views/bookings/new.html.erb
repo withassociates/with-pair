@@ -1,25 +1,9 @@
-<%= form_for([@session, @booking]) do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name, required: true, autofocus: true %>
-    <%= @booking.errors[:name].to_sentence %>
-  </div>
-  <div>
-    <%= f.label :skype %>
-    <%= f.text_field :skype %>
-    <%= @booking.errors[:skype].to_sentence %>
-  </div>
-  <div>
-    <%= f.label :email %>
-    <%= f.email_field :email, required: true %>
-    <%= @booking.errors[:email].to_sentence %>
-  </div>
-  <div>
-    <%= f.label :project %>
-    <%= f.text_area :project, required: true %>
-    <%= @booking.errors[:project].to_sentence %>
-  </div>
-  <div>
-    <%= f.button "Book session" %>
-  </div>
+<%= form_for_booking do |f| %>
+  <%= f.field :name, required: true, autofocus: true %>
+  <%= f.field :skype %>
+  <%= f.field :email, required: true %>
+  <%= f.field :project, required: true, rows: 3 do %>
+    A brief (140 character max) description of the project you’d like to work on.
+  <% end %>
+  <%= f.button "Book session" %>
 <% end %>
