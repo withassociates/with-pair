@@ -10,7 +10,7 @@
   </thead>
   <tbody>
     <% @sessions.each do |s| %>
-      <%= render 'sessions/row', s: s %>
+      <%= render_session_row(s: s) %>
     <% end %>
   </tbody>
 </table>

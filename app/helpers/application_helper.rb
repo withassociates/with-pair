@@ -1,5 +1,6 @@
 module ApplicationHelper
   DEFAULT_GRAVATAR_SIZE = 60
+  SESSION_ROW_DEFAULTS = { display_book_button: true }
 
   def gravatar_tag(email, options = {})
     size = options.fetch(:size) { DEFAULT_GRAVATAR_SIZE }
@@ -10,5 +11,9 @@ module ApplicationHelper
   def gravatar_url(email, size = DEFAULT_GRAVATAR_SIZE)
     md5 = Digest::MD5.hexdigest(email)
     "http://www.gravatar.com/avatar/#{md5}.jpg?s=#{size}"
+  end
+
+  def render_session_row(options = {})
+    render("sessions/row", SESSION_ROW_DEFAULTS.merge(options))
   end
 end

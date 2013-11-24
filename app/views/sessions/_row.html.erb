@@ -1,7 +1,3 @@
-<% unless defined? display_button %>
-  <% display_button = true %>
-<% end %>
-
 <tr class="<%= s.state %>">
   <td>
     <%= gravatar_tag s.person.email, class: "img-circle" %>
@@ -11,7 +7,7 @@
   <td><%= s.starts_at.strftime('%H:%M') %>–<%= s.ends_at.strftime('%H:%M') %></td>
   <td><%= s.person.skills %></td>
   <td>
-    <% if display_button %>
+    <% if display_book_button %>
       <% if s.bookable? %>
         <%= link_to "Book session", new_session_booking_path(s) %>
       <% else %>
