@@ -1,5 +1,5 @@
 class BookingMailer < ActionMailer::Base
-  default from: "pair@withassociates.com"
+  default from: "Pair With Associates <pair@withassociates.com>"
 
   def teacher_notification(booking)
     @booking = booking
@@ -9,7 +9,7 @@ class BookingMailer < ActionMailer::Base
     mail to: @person.email,
          subject: "New booking on Pair"
   end
-  
+
   def student_notification(booking)
     @booking = booking
     @session = @booking.session
