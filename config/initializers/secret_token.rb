@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Pair::Application.config.secret_key_base = '418a83a8dfc381f4e12d5c18b325771e723ced8a9f34cc6b86c82941e49c08297b3f95358470a37d9b2f510056bccd6a38d0684c75ac40b0d1dbe702eca96f50'
+Pair::Application.config.secret_key_base = ENV['SECRET'] || 'DEVELOPMENT_SECRET'
