@@ -7,6 +7,7 @@ gem 'pg'         , '~> 0.17.0'
 gem 'sass-rails' , '~> 4.0.0'
 gem 'uglifier'   , '~> 2.3.1'
 gem 'unicorn'    , '~> 4.7.0'
+gem 'highline'   , '~> 1.6.0' , require: false
 
 group :production do
   gem 'rails_12factor', '~> 0.0.2'
