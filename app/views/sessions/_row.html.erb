@@ -3,13 +3,17 @@
     <%= gravatar_tag s.person.email, class: "img-circle" %>
     <%= s.person.name %>
   </td>
-  <td><%= s.starts_at.strftime('%d/%m/%y') %></td>
-  <td><%= s.starts_at.strftime('%H:%M') %>–<%= s.ends_at.strftime('%H:%M') %></td>
-  <td><%= s.person.skills %></td>
+  <td>
+    <%= s.starts_at.today? ? "Today" : s.starts_at.strftime("%A") %>
+    <%= s.starts_at.strftime("%-I:%M") %>–<%= s.ends_at.strftime("%-I:%M%P") %>
+  </td>
+  <td>
+    <%= s.person.skills %>
+  </td>
   <td>
     <% if display_book_button %>
       <% if s.bookable? %>
-        <%= link_to "Book session", new_session_booking_path(s) %>
+        <%= link_to "Book Session", new_session_booking_path(s), class: "btn btn-primary" %>
       <% else %>
         Unavailable
       <% end %>

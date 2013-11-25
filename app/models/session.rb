@@ -3,10 +3,10 @@ class Session < ActiveRecord::Base
   UNAVAILABLE = :unavailable
 
   belongs_to :person
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
   def self.upcoming
-    where("starts_at > NOW()")
+    order("starts_at ASC").where("starts_at > NOW()")
   end
 
   def state

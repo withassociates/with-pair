@@ -1,7 +1,13 @@
 class BookingsController < ApplicationController
   def new
     @session = Session.find(params[:session_id])
-    @booking = @session.bookings.new
+    @person = @session.person
+
+    if @session.bookable?
+      @booking = @session.bookings.new
+    else
+      redirect_to root_path
+    end
   end
 
   def create
@@ -19,6 +25,7 @@ class BookingsController < ApplicationController
 
   def show
     @session = Session.find(params[:session_id])
+    @person = @session.person
     @booking = @session.bookings.find(params[:id])
   end
 

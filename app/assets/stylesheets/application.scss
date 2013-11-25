@@ -3,6 +3,11 @@
  *= require_tree .
  */
 
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
 .sessions {
   td {
     vertical-align: middle !important;

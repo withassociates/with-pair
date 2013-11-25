@@ -36,7 +36,7 @@ class FormBuilder < ActionView::Helpers::FormBuilder
   end
 
   def button(value = nil, options = {}, &block)
-    options[:class] = "btn btn-primary"
+    options[:class] = "btn btn-primary #{options[:class]}"
     super
   end
 
