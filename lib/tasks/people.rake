@@ -59,4 +59,5 @@ PEOPLE = [{
   name: 'Joseph Morrow',
   email: 'joseph@withassociates.com',
   skills: 'Design, UX, CSS, Javascript',
+  screenhero_url: 'http://join.screenhero.com/98dc33662c463186f4ec222eb9d3dd20'
 }]
