@@ -38,19 +38,21 @@
 <hr>
 
 <div class="well">
-  <table class="table sessions" id="sessions">
-    <thead>
-      <tr>
-        <th>Who?</th>
-        <th>When?</th>
-        <th>What?</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @sessions.each do |s| %>
-        <%= render_session_row(s: s) %>
-      <% end %>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table sessions" id="sessions">
+      <thead>
+        <tr>
+          <th colspan="2">Who?</th>
+          <th>When?</th>
+          <th>What?</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @sessions.each do |s| %>
+          <%= render_session_row(s: s) %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </div>

@@ -13,11 +13,8 @@ body {
     vertical-align: middle !important;
   }
 
-  img {
-    margin-right: 0.618em;
-  }
-
   .unavailable {
+    img { opacity: 0.2 }
     color: #ccc;
   }
 }
