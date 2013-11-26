@@ -24,7 +24,8 @@ end
 PEOPLE = [{
   name: 'Mathew Wilson O’Day',
   email: 'mathew@withassociates.com',
-  skills: 'Design, UX, Project Management, Running a Business'
+  skills: 'Design, UX, Project Management, Running a Business',
+  screenhero_url: 'http://join.screenhero.com/681a47b579aad8f218920952348fcb36'
 }, {
   name: 'Erin Staniland',
   email: 'erin@withassociates.com',
