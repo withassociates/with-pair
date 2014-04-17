@@ -1,9 +1,12 @@
 require 'highline/import'
+require 'chronic'
 
 namespace :sessions do
   desc "Create sessions for all users"
   task :create => :environment do
-    epoch = if Time.now.hour <= 9
+    epoch = if day = ENV['DAY']
+              Chronic.parse(day).beginning_of_day
+            elsif Time.now.hour <= 9
               Date.today
             else
               Date.tomorrow
