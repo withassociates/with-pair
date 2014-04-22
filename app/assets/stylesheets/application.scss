@@ -1,20 +1,11 @@
-/*
- *= require_self
- *= require_tree .
- */
+@import 'bourbon';
 
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
+@import 'global/colors';
+@import 'global/buttons';
+@import 'global/fonts';
+@import 'global/layout';
+@import 'global/reset';
+@import 'global/tables';
+@import 'global/typography';
 
-.sessions {
-  td {
-    vertical-align: middle !important;
-  }
-
-  .unavailable {
-    img { opacity: 0.2 }
-    color: #ccc;
-  }
-}
+@import 'components/banner';

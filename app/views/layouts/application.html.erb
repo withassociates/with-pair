@@ -1,23 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <%= csrf_meta_tags %>
-
-  <title>Pair With Associates</title>
-
-  <%= stylesheet_link_tag *%w[
-    //netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css
-    application
-  ] %>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-
-  <div class="container">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pair With Associates</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application' %>
+  </head>
+  <body>
     <%= yield %>
-  </div>
-
-</body>
+  </body>
 </html>

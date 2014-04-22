@@ -1,43 +1,27 @@
-<h1 class="text-center">Pair With Associates</h1>
-
-<hr>
-
-<div class="text-center">
-  <p class="lead">
-    Need a hand working through a tricky programming problem?<br>
-    Or help finding the right path for a design solution?<br>
-    Or just someone to bounce ideas off?
-  </p>
-
-  <p class="lead">Us too.</p>
-
-  <p class="lead">That’s why we’re making ourselves available for short daily pairing sessions.</p>
-
-  <%= link_to "Book a Session", "#sessions", class: "btn btn-primary btn-lg" %>
+<div class="banner">
+  <div class="container">
+    <h1><span>Pair</span> With Associates</h1>
+    <p>Need a hand working through a tricky programming problem? Or help finding the right path for a design solution? Or just someone to bounce ideas off?</p>
+    <p>Us too. That’s why we’re making ourselves available for short daily pairing sessions.</p>
+    <%= link_to "Book a Session", "#sessions", class: "button" %>
+  </div>
 </div>
 
-<hr>
-
-<h2 class="text-center">Book a Session</h2>
-
-<hr>
-
-<div class="well">
-  <div class="table-responsive">
-    <table class="table sessions" id="sessions">
-      <thead>
-        <tr>
-          <th colspan="2">Who?</th>
-          <th>When?</th>
-          <th>What?</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @sessions.each do |s| %>
-          <%= render_session_row(s: s) %>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
+<div class="container">
+  <h2>Book a Session</h2>
+  <table id="sessions">
+    <thead>
+      <tr>
+        <th colspan="2">Who?</th>
+        <th>When?</th>
+        <th>What?</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sessions.each do |s| %>
+        <%= render_session_row(s: s) %>
+      <% end %>
+    </tbody>
+  </table>
 </div>

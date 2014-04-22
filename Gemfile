@@ -9,6 +9,7 @@ gem 'uglifier'   , '~> 2.5.0'
 gem 'unicorn'    , '~> 4.8.0'
 gem 'highline'   , '~> 1.6.0' , require: false
 gem 'chronic'    , '~> 0.10.0', require: false
+gem 'bourbon'
 
 group :production do
   gem 'rails_12factor', '~> 0.0.2'
