@@ -1,15 +1,14 @@
-<div class="banner">
+<div class="intro">
   <div class="container">
     <h1><span>Pair</span> With Associates</h1>
     <p>Need a hand working through a tricky programming problem? Or help finding the right path for a design solution? Or just someone to bounce ideas off?</p>
-    <p>Us too. That’s why we’re making ourselves available for short daily pairing sessions.</p>
-    <%= link_to "Book a Session", "#sessions", class: "button" %>
+    <p>Us too. That’s why each of us at With Associates are making ourselves available for short daily pairing sessions.</p>
   </div>
 </div>
 
 <div class="container">
   <h2>Book a Session</h2>
-  <table id="sessions">
+  <table>
     <thead>
       <tr>
         <th colspan="2">Who?</th>
@@ -24,4 +23,17 @@
       <% end %>
     </tbody>
   </table>
+</div>
+
+<div class="container">
+  <div class="about">
+    <h2>About With Associates</h2>
+    <p>We're a digital agency. We plan, design and build websites and apps. Read more about us on <%= link_to 'our website', 'http://withassociates.com' %>, or just get in touch:</p>
+    <ul class="social">
+      <li><%= link_to 'Github', '#', class: 'icon icon-github' %></li>
+      <li><%= link_to 'Twitter', '#', class: 'icon icon-twitter' %></li>
+      <li><%= link_to 'Instagram', '#', class: 'icon icon-instagram' %></li>
+      <li><%= link_to 'Flickr', '#', class: 'icon icon-flickr' %></li>
+    </ul>
+  </div>
 </div>

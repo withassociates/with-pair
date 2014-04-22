@@ -8,4 +8,6 @@
 @import 'global/tables';
 @import 'global/typography';
 
-@import 'components/banner';
+@import 'shared/footer';
+
+@import 'views/*';

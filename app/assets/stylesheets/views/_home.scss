@@ -1,0 +1,53 @@
+.about,
+.intro .container {
+  text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 46em;
+
+  padding: 0 24px;
+
+  @media (min-width: 768px) {
+    p {
+      font-size: 1.25em;
+      line-height: 1.5em;
+    }
+  }
+}
+
+.intro {
+  overflow: hidden;
+
+  background-color: $green;
+
+  span { color: white; }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 2.75em;
+      line-height: 1.25em;
+    }
+  }
+}
+
+.social {
+  overflow: hidden;
+
+  margin: 12px 0 -12px 0;
+  padding: 0;
+
+  list-style: none;
+
+  li {
+    display: inline-block;
+    margin: 12px;
+  }
+
+  a.icon {
+    font-size: 0;
+    border-bottom: 0;
+  }
+
+  a.icon:before { font-size: 16px; }
+}

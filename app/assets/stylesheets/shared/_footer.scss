@@ -1,0 +1,44 @@
+.footer {
+  color: $wa-medium;
+
+  p {
+    font-size: 0.75em;
+    line-height: 1.5em;
+  }
+  
+  .container { margin-bottom: 24px; }
+
+  .wa-logo {
+    font-size: 0;
+
+    &:before {
+      content: '';
+
+      display: block;
+
+      height: 22px;
+      width: 82px;
+
+      background-image: url('wa-logo-grey-328x88.png');
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .column {
+    box-sizing: border-box;
+
+    float: left;
+
+    margin: -24px 0;
+    padding: 0 12px;
+    width: 50%;
+  }
+
+  .row {
+    overflow: hidden;
+    margin: 0 -12px;
+  }
+}
