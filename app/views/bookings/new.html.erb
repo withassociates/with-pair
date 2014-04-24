@@ -1,23 +1,18 @@
-<%= gravatar_tag @person.email, size: 180, class: "img-circle center-block" %>
+<div class="bookings">
+  <div class="banner yellow"></div>
 
-<h3 class="text-center">Your Booking with <%= @person.given_name %></h3>
+  <div class="container">
+    <%= gravatar_tag @person.email, size: 200, class: "img-circle gravatar" %>
+    <h2>Your booking with <%= @person.given_name %> for <%= @session.starts_at.strftime('%A %-I:%M') %>–<%= @session.ends_at.strftime('%-I:%M%P') %></h2>
 
-<p class="lead text-center">
-  <%= @session.starts_at.strftime('%A %-I:%M') %>–<%= @session.ends_at.strftime('%-I:%M%P') %>
-</p>
-
-<div class="row">
-  <div class="col-sm-6 col-sm-offset-3">
     <%= form_for_booking do |f| %>
-      <div class="well">
-        <%= f.field :name, required: true, autofocus: true %>
-        <%= f.field :email, required: true %>
-        <%= f.field :skype %>
-        <%= f.field :project, required: true, rows: 3 do %>
-          A brief (140 character max) description of the project you’d like to work on.
-        <% end %>
-      </div>
-      <%= f.button "Book Session", class: "btn-lg center-block" %>
+      <%= f.field :name, required: true, autofocus: true %>
+      <%= f.field :email, required: true %>
+      <%= f.field :skype %>
+      <%= f.field :project, required: true, rows: 3 do %>
+        A brief (140 character max) description of the project you’d like to work on.
+      <% end %>
+      <%= f.button "Book Session", class: "button book-session" %>
     <% end %>
   </div>
 </div>

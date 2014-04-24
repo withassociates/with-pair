@@ -1,32 +1,20 @@
-<div class="text-center">
-  <%= gravatar_tag(@person.email, size: 200, class: "img-circle") %>
-  <%= gravatar_tag(@booking.email, size: 200, class: "img-circle") %>
-</div>
+<div class="bookings bookings-show">
+  <div class="banner yellow"></div>
 
-<hr>
+  <div class="container">
+    <%= gravatar_tag @person.email, size: 200, class: "img-circle gravatar" %>
 
-<p class="lead text-center">
-  Thanks <%= @booking.given_name %>!<br>
-  <strong><%= @person.given_name %></strong> will be in touch at
-  <strong><%= @session.starts_at.strftime('%-I%P') %></strong>
-</p>
-
-<hr>
-
-<div class="row">
-  <div class="col-sm-4 col-sm-offset-4">
-    <h4 class="text-center">What Now?</h4>
-
-    <ol class="list-group">
-      <li class="list-group-item">
-        <%= link_to_screenhero "Download Screenhero", @person.screenhero_url %>
-      </li>
-      <li class="list-group-item">
-        Create an account
-      </li>
-      <li class="list-group-item">
-        Add <strong><%= @person.email %></strong> as a contact
-      </li>
-    </ol>
-  </div>
+    <div class="row">
+      <div class="column">
+        <h2>Thanks <%= @booking.given_name %>! <%= @person.given_name %></strong> will be in touch at <%= @session.starts_at.strftime('%-I%P') %></h2>
+      </div>
+      <div class="column">
+        <h2>What Now?</h2>
+        <ol class="steps-list">
+          <li><%= link_to_screenhero "Download Screenhero", @person.screenhero_url %></li>
+          <li>Create an account</li>
+          <li>Add <strong><%= @person.email %></strong> as a contact</li>
+        </ol>
+      </div>
+    </div>
 </div>

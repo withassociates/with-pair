@@ -1,0 +1,50 @@
+.bookings {
+  h2 {
+    max-width: 14em;
+    margin: 24px auto 48px auto;
+    padding: 0 24px;
+  }
+
+  .book-session {
+    margin: 24px 0;
+    width: 100%;
+
+    cursor: pointer;
+  }
+
+  .gravatar {
+    height: 128px;
+    margin: -128px auto 24px auto;
+    width: 128px;
+
+    @media (min-width: 768px) {
+      & {
+        height: 172px;
+        width: 172px;
+      }
+    }
+  }
+}
+
+.bookings-show {
+  h2 {
+    max-width: none;
+    margin: 24px auto 48px auto;
+    padding: 0 48px 0 0;
+
+    text-align: left;
+  }
+
+  .gravatar {
+    margin-bottom: 48px;
+  }
+
+  .steps-list {
+    margin: -24px 0 24px 0;
+    padding: 0;
+
+    list-style-position: inside;
+
+    li { margin: 12px 0; }
+  }
+}

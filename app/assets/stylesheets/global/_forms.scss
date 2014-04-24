@@ -1,0 +1,45 @@
+form {
+  margin: 48px auto;
+  max-width: 40em;
+}
+
+label {
+  display: block;
+
+  margin: 24px 0;
+
+  font-size: 0.75em;
+  font-weight: 700;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+
+input[type="text"],
+textarea {
+  -webkit-appearance: none;
+
+  box-sizing: border-box;
+
+  display: block;
+
+  margin: 24px 0;
+  padding: 12px;
+  width: 100%;
+
+  border: 1px solid $wa-light;
+  border-radius: 0;
+
+  label+& { margin-top: -16px; }
+}
+
+.help-block {
+  display: block;
+
+  font-size: 0.75em;
+  line-height: 1.5em;
+
+  input[type="text"]+&,
+  textarea+& {
+    margin-top: -16px;
+  }
+}

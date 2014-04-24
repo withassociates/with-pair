@@ -1,0 +1,9 @@
+.banner {
+  overflow: hidden;
+
+  min-height: 96px;
+
+  background-color: $green;
+
+  &.yellow { background-color: $yellow; }
+}
