@@ -1,9 +1,9 @@
 <tr class="<%= s.state %>">
   <td>
-    <%= gravatar_tag s.person.email, class: "img-circle" %>
+    <%= gravatar_tag s.person.email, size: 128, class: "gravatar" %>
   </td>
   <td>
-    <%= s.person.name %>
+    <strong><%= s.person.name %></strong>
   </td>
   <td>
     <%= s.starts_at.today? ? "Today" : s.starts_at.strftime("%A") %>
@@ -17,7 +17,7 @@
       <% if s.bookable? %>
         <%= link_to "Book Session", new_session_booking_path(s), class: "button" %>
       <% else %>
-        Unavailable
+        <div class="unavailable">Unavailable</div>
       <% end %>
     <% end %>
   </td>
