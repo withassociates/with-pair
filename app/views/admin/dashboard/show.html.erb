@@ -1,0 +1,53 @@
+<div class="intro banner">
+  <div class="container">
+    <h1><span>Pair</span> With Associates</h1>
+  </div>
+</div>
+
+<div class="bookings">
+  <div class="container">
+    <%= form_for [:admin, @new_session], builder: FormBuilder do |f| %>
+      <%= f.field :starts_at, required: true, autofocus: true, label: "Add a session", placeholder: "e.g. Wednesday at 3pm" %>
+      <%= f.button "Add", class: "button book-session" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <h2>Your Sessions</h2>
+  <table>
+    <thead>
+      <tr>
+        <th colspan="2">Who?</th>
+        <th>When?</th>
+        <th>What?</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @sessions.each do |s| %>
+        <% next if s.new_record? %>
+        <tr class="<%= s.state %>">
+          <td>
+            <%= gravatar_tag s.person.email, size: 128, class: "gravatar" %>
+          </td>
+          <td>
+            <strong><%= s.person.name %></strong>
+          </td>
+          <td>
+            <%= s.starts_at.today? ? "Today" : s.starts_at.strftime("%A") %>
+            <%= s.starts_at.strftime("%-I:%M") %>–<%= s.ends_at.strftime("%-I:%M%P") %>
+          </td>
+          <td>
+            <%= s.person.skills %>
+          </td>
+          <td>
+            <% if s.bookable? %>
+              <%= link_to "Remove", admin_session_destroy_path(s), class: "button", method: :delete %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

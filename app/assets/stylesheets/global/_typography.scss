@@ -45,3 +45,9 @@ html {
 p {
   margin: 24px 0;
 }
+
+input, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-font-smoothing: antialiased;
+}

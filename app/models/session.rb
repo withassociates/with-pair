@@ -5,6 +5,10 @@ class Session < ActiveRecord::Base
   belongs_to :person
   has_many :bookings, dependent: :destroy
 
+  validates :person, presence: true
+  validates :starts_at, presence: true
+  validates :ends_at, presence: true
+
   def self.upcoming
     order("starts_at ASC").where("starts_at > NOW()")
   end

@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def show
-    @sessions = Session.upcoming
+    @sessions = Session.includes(:person, :bookings).upcoming
   end
 end

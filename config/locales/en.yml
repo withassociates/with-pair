@@ -3,3 +3,5 @@ en:
     attributes:
       booking:
         skype: 'Skype ID'
+      session:
+        starts_at: 'Add a session'

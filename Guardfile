@@ -1,7 +1,5 @@
 options = {
-  all_on_start: false,
-  all_after_pass: false,
-  focus_on_failed: false
+  cmd: 'spring rspec'
 }
 
 guard :rspec, options do
