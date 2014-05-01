@@ -42,9 +42,7 @@
             <%= s.person.skills %>
           </td>
           <td>
-            <% if s.bookable? %>
-              <%= link_to "Remove", admin_session_destroy_path(s), class: "button", method: :delete %>
-            <% end %>
+            <%= link_to "Remove", admin_session_destroy_path(s), class: "button", method: :delete %>
           </td>
         </tr>
       <% end %>
