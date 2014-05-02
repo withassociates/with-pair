@@ -17,7 +17,7 @@
       <% if s.bookable? %>
         <%= link_to "Book Session", new_session_booking_path(s), class: "button" %>
       <% else %>
-        <div class="unavailable">Unavailable</div>
+        <div class="booked">Booked</div>
       <% end %>
     <% end %>
   </td>
