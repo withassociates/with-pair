@@ -2,7 +2,7 @@
 
 Need a hand working through a tricky programming problem?
 Or help finding the best route for a design solution?
-Or just someone to bound ideas off?
+Or just someone to bounce ideas off?
 
 Us too.
 
