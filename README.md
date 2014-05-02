@@ -9,7 +9,3 @@ Us too.
 That’s why we’re making ourselves available for short daily pairing sessions.
 
 http://pair.withassociates.com/
-
-## Notes
-
-- TODO: Use request information to infer timezone for request
