@@ -11,7 +11,7 @@ module ApplicationHelper
 
   def gravatar_url(email, size = DEFAULT_GRAVATAR_SIZE)
     md5 = Digest::MD5.hexdigest(email)
-    "http://www.gravatar.com/avatar/#{md5}.jpg?s=#{size}"
+    "http://www.gravatar.com/avatar/#{md5}.jpg?s=#{size}&d=#{asset_url 'gravatar_fallback.png'}"
   end
 
   def render_session_row(options = {})
