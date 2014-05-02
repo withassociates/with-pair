@@ -1,6 +1,6 @@
 class Session < ActiveRecord::Base
   BOOKABLE = :bookable
-  UNAVAILABLE = :unavailable
+  BOOKED = :booked
 
   belongs_to :person
   has_many :bookings, dependent: :destroy
@@ -15,7 +15,7 @@ class Session < ActiveRecord::Base
 
   def state
     if bookings.any?(&:persisted?)
-      UNAVAILABLE
+      BOOKED
     else
       BOOKABLE
     end
