@@ -10,11 +10,13 @@
   position: relative;
 
   padding: 0.8125em 1.25em;
+  padding-right: 2.5em;
 
   -webkit-font-smoothing: antialiased;
   font-family: 'Colfax', sans-serif;
   text-decoration: none;
   text-align: left;
+  white-space: nowrap;
 
   background: transparentize(black, 0.95);
   color: black;
