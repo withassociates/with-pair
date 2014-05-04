@@ -22,7 +22,9 @@ class Admin::SessionsController < ApplicationController
 
   def destroy
     @session = Session.find(params.require(:session_id))
+
     @session.destroy
+
     redirect_to admin_root_path
   end
 end

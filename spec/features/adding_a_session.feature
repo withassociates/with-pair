@@ -7,4 +7,4 @@ Feature: Adding a session
     When I visit "/admin"
     And I fill in "Add a session" with "Wednesday at 2pm"
     And I click "Add"
-    Then I see "Wednesday 2:00–2:30pm"
+    Then I see "Wednesday 2:00pm–2:30pm"

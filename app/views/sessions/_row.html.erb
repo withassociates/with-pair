@@ -6,8 +6,7 @@
     <strong><%= s.person.name %></strong>
   </td>
   <td>
-    <%= s.starts_at.today? ? "Today" : s.starts_at.strftime("%A") %>
-    <%= s.starts_at.strftime("%-I:%M") %>–<%= s.ends_at.strftime("%-I:%M%P") %>
+    <%= session_time_tags s %>
   </td>
   <td>
     <%= s.person.skills %>

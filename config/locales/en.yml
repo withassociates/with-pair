@@ -1,4 +1,7 @@
 en:
+  time:
+    formats:
+      time: '%-I:%M%P'
   activerecord:
     attributes:
       booking:

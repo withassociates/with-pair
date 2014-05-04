@@ -10,7 +10,11 @@ class Session < ActiveRecord::Base
   validates :ends_at, presence: true
 
   def self.upcoming
-    order("starts_at ASC").where("starts_at > NOW()")
+    where('starts_at >= NOW()').order('starts_at ASC')
+  end
+
+  def self.past
+    where('starts_at < NOW()').order('starts_at DESC')
   end
 
   def state

@@ -21,4 +21,16 @@ module ApplicationHelper
   def link_to_screenhero(text, url, options = {})
     link_to(text, url || DEFAULT_SCREENHERO_URL, options)
   end
+
+  def session_time_tags(s)
+    session_start_tag(s) + '–' + session_end_tag(s)
+  end
+
+  def session_start_tag(s)
+    time_tag(s.starts_at, l(s.starts_at, format: :calendar))
+  end
+
+  def session_end_tag(s)
+    time_tag(s.ends_at, l(s.ends_at, format: :time))
+  end
 end
