@@ -1,0 +1,21 @@
+.edit-data {
+  text-align: left;
+
+  form {
+    margin: 0 auto;
+  }
+
+  p {
+    font-weight: bold;
+    background: #F2F2F2;
+    padding: 10px 0;
+  }
+
+  .button {
+    width: 100%;
+
+    @media (max-width: 767px) {
+      margin: 0;
+    }
+  }
+}
