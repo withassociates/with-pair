@@ -13,6 +13,19 @@
   </div>
 </div>
 
+<div class="edit-data">
+  <div class="container">
+    <%= form_for [:admin, current_person], builder: FormBuilder do |f| %>
+      <%= f.label :skills, "Edit your skills" %>
+      <%= f.text_field :skills %>
+      <%= f.button "Save", class: "button book-button" %>
+    <% end %>
+    <% if flash[:admin].present? %>
+      <p><%= flash[:admin] %></p>
+    <% end %>
+  </div>
+</div>
+
 <div class="container">
   <h2>Your Upcoming Sessions</h2>
   <table>

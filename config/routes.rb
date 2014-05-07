@@ -9,6 +9,7 @@ Pair::Application.routes.draw do
 
   namespace :admin do
     root to: 'dashboard#show'
+    patch 'person' => 'dashboard#update', as: :person
     get 'login' => 'auth#new', as: :login
     get 'logout' => 'auth#destroy', as: :logout
     resources :sessions, only: [:create] do
