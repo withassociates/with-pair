@@ -2,15 +2,17 @@ require 'spec_helper'
 
 describe "I18n.l(time, format: :calendar)" do
   around do |example|
-    Timecop.freeze(now, &example)
+    Time.use_zone('London') do
+      Timecop.freeze(now, &example)
+    end
   end
 
   let :now do
-    Time.local(2014, 5, 5, 9, 0)
+    Time.utc(2014, 5, 5, 8, 0)
   end
 
   subject do
-    I18n.l(time, format: :calendar)
+    I18n.l(time.in_time_zone(Time.zone), format: :calendar)
   end
 
   context "today" do
@@ -51,5 +53,10 @@ describe "I18n.l(time, format: :calendar)" do
   context "before last week" do
     let(:time) { now - 2.weeks }
     it { should == 'Monday 21 April 9:00am' }
+  end
+
+  context "in a different timezone" do
+    let(:time) { now }
+    it { Time.use_zone('Paris') { should == 'Today 10:00am' } }
   end
 end

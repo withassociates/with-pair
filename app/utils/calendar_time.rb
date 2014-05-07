@@ -1,8 +1,8 @@
 class CalendarTime
   attr_reader :time
 
-  def initialize(time)
-    @time = time
+  def initialize(time, zone = Time.zone)
+    @time = time.in_time_zone(zone)
   end
 
   def to_date_format
@@ -39,7 +39,7 @@ class CalendarTime
   end
 
   def now
-    Time.now
+    Time.zone.now
   end
 
   def today
