@@ -8,7 +8,7 @@ gem 'highline'             , '~> 1.6.0' , require: false
 gem 'omniauth-google-apps' , '~> 0.1.0'
 gem 'pg'                   , '~> 0.17.0'
 gem 'pry-rails'            , '~> 0.3.0'
-gem 'rails'                , '~> 4.1.0'
+gem 'rails'                , '~> 4.1.1'
 gem 'sass-rails'           , '~> 4.0.3'
 gem 'uglifier'             , '~> 2.5.0'
 gem 'unicorn'              , '~> 4.8.0'
