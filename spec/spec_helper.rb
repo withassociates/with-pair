@@ -22,8 +22,4 @@ RSpec.configure do |config|
   config.after do
     Timecop.return
   end
-
-  config.before type: :feature do
-    CreatePeople.perform
-  end
 end

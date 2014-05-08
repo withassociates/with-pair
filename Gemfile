@@ -18,9 +18,10 @@ group :production do
 end
 
 group :development do
-  gem 'foreman', '~> 0.63.0', require: false
-  gem 'guard-rspec', '~> 4.2.0', require: false
-  gem 'spring-commands-rspec', '~> 1.0.0', require: false
+  gem 'foreman'               , '~> 0.63.0' , require: false
+  gem 'guard-rspec'           , '~> 4.2.0'  , require: false
+  gem 'powder'                , '~> 0.2.1'
+  gem 'spring-commands-rspec' , '~> 1.0.0'  , require: false
 end
 
 group :test do

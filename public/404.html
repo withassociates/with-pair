@@ -2,57 +2,92 @@
 <html>
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
+  <link href="../assets/application.css" rel="stylesheet">
   <style>
-  body {
-    background-color: #EFEFEF;
-    color: #2E2F30;
-    text-align: center;
-    font-family: arial, sans-serif;
-  }
+    html, body {
+      margin: 0;
+      padding: 0;
+      text-align: center;
 
-  div.dialog {
-    width: 25em;
-    margin: 4em auto 0 auto;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
-    border-top-right-radius: 9px;
-    background-color: white;
-    padding: 7px 4em 0 4em;
-  }
+      height: 100%;
+      min-height: 100%;
 
-  h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
-  }
+      color: #323232;
+    }
 
-  body > p {
-    width: 33em;
-    margin: 0 auto 1em;
-    padding: 1em 0;
-    background-color: #F7F7F7;
-    border: 1px solid #CCC;
-    border-right-color: #999;
-    border-bottom-color: #999;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-top-color: #DADADA;
-    color: #666;
-    box-shadow:0 3px 8px rgba(50, 50, 50, 0.17);
-  }
+    h1 {
+      font-size: 2.75em;
+      line-height: 1.3125;
+    }
+
+    div {
+      width: 100%;
+    }
+
+    .header {
+      background: #86D4AC;
+      position: absolute;
+      top: 0;
+      bottom: 49%;
+      display: table;
+      padding: 60px 0;
+    }
+
+    .header .text {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    .white {
+      color: #fff;
+    }
+
+    .container {
+      margin-top: 400px;
+    }
+
+    footer .container {
+      margin-top: 0;
+    }
   </style>
 </head>
 
 <body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
+  <div class="header">
+    <div class="text">
+      <h1>The <span class="white">page</span> you were looking for can't be found.</h1>
+    </div>
   </div>
-  <p>If you are the application owner check the logs for more information.</p>
+
+  <div class="container">
+    <div class="about">
+      <h2>About With Associates</h2>
+      <p>We're a digital agency. We plan, design and build websites and apps. 
+        Read more about us on <a href="http://withassociates.com">our website</a>,
+        or just get in touch:</p>
+      <ul class="social">
+        <li><a class="icon icon-github" href="http://www.github.com/withassociates">Github</a></li>
+        <li><a class="icon icon-twitter" href="http://www.twitter.com/withassociates">Twitter</a></li>
+        <li><a class="icon icon-instagram" href="http://instagram.com/withassociates">Instagram</a></li>
+        <li><a class="icon icon-flickr" href="http://www.flickr.com/photos/withassociates">Flickr</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <hr>
+      <div class="row">
+        <div class="column">
+          <a href="http://2014.withassociates.com">
+            <p class="wa-logo">W/A</p>
+          </a>
+        </div>
+        <div class="column">
+          <p>With Associates is the trading name of With Associates Digital Limited. Registered office: 54B Downham Road, N1 5AS. Registered in England under registration No. 08928808.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
