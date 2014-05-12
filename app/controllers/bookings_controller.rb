@@ -12,6 +12,7 @@ class BookingsController < ApplicationController
 
   def create
     @session = Session.find(params[:session_id])
+    @person = @session.person
     @booking = @session.bookings.new(booking_params)
 
     if @booking.save
