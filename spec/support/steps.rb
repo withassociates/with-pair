@@ -10,8 +10,7 @@ step "there is a session available today with Tom" do
   tom = Person.create(
     name: 'Tom Marshall',
     email: 'thomas@withassociates.com',
-    skills: 'Javascript, CSS, Ruby',
-    screenhero_url: 'http://join.screenhero.com/code'
+    skills: 'Javascript, CSS, Ruby'
   )
   Session.create(
     person: tom,
