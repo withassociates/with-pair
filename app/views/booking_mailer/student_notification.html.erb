@@ -13,3 +13,11 @@
   <dt>Project</dt>
   <dd><%= @booking.project %></dd>
 </dl>
+
+<p><strong>What Now?</strong></p>
+
+<ol>
+  <li><%= link_to "Download Screenhero", "http://screenhero.com" %></li>
+  <li>Create an account</li>
+  <li>Add <strong><%= @person.screenhero_email %></strong> as a contact</li>
+</ol>

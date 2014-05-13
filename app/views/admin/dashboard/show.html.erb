@@ -16,12 +16,10 @@
 <div class="edit-data">
   <div class="container">
     <%= form_for [:admin, current_person], builder: FormBuilder do |f| %>
-      <%= f.label :skills, "Edit your skills" %>
-      <%= f.text_field :skills %>
+      <h3>Edit your details</h3>
+      <%= f.field :skills %>
+      <%= f.field :screenhero_email, placeholder: current_person.email %>
       <%= f.button "Save", class: "button book-button" %>
-    <% end %>
-    <% if flash[:admin].present? %>
-      <p><%= flash[:admin] %></p>
     <% end %>
   </div>
 </div>

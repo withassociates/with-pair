@@ -14,9 +14,9 @@
       <div class="column">
         <h2>What Now?</h2>
         <ol class="steps-list">
-          <li><%= link_to_screenhero "Download Screenhero", @person.screenhero_url %></li>
+          <li><%= link_to "Download Screenhero", "http://screenhero.com" %></li>
           <li>Create an account</li>
-          <li>Add <strong><%= @person.email %></strong> as a contact</li>
+          <li>Add <strong><%= @person.screenhero_email %></strong> as a contact</li>
           <li>Tell your friends!<br><br>
             <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pair.withassociates.com" data-text="I’ve booked a pairing session with <%= @person.name %>!" data-via="withassociates">Tweet</a>
             <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>

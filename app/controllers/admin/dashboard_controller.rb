@@ -19,6 +19,6 @@ class Admin::DashboardController < ApplicationController
   private
 
   def person_params
-    params.require(:person).permit(:skills)
+    params.require(:person).permit(:skills, :screenhero_email)
   end
 end
