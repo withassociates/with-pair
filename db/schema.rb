@@ -11,20 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140513141232) do
+ActiveRecord::Schema.define(version: 20140610051117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: true do |t|
     t.integer  "session_id"
-    t.string   "name",       null: false
+    t.string   "name",         null: false
     t.string   "skype"
-    t.string   "email",      null: false
-    t.text     "project",    null: false
+    t.string   "email",        null: false
+    t.text     "project",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "cancelled_at"
   end
+
+  add_index "bookings", ["cancelled_at"], name: "index_bookings_on_cancelled_at", using: :btree
 
   create_table "people", force: true do |t|
     t.string   "name"

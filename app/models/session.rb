@@ -18,7 +18,7 @@ class Session < ActiveRecord::Base
   end
 
   def state
-    if bookings.any?(&:persisted?)
+    if bookings.active.any?(&:persisted?)
       BOOKED
     else
       BOOKABLE
