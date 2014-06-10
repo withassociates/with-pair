@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140610051117) do
+ActiveRecord::Schema.define(version: 20140610052642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20140610051117) do
   end
 
   add_index "bookings", ["cancelled_at"], name: "index_bookings_on_cancelled_at", using: :btree
+  add_index "bookings", ["session_id", "cancelled_at"], name: "index_bookings_on_session_id_and_cancelled_at", using: :btree
+  add_index "bookings", ["session_id"], name: "index_bookings_on_session_id", using: :btree
 
   create_table "people", force: true do |t|
     t.string   "name"
@@ -45,5 +47,10 @@ ActiveRecord::Schema.define(version: 20140610051117) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "sessions", ["ends_at"], name: "index_sessions_on_ends_at", using: :btree
+  add_index "sessions", ["person_id", "starts_at", "ends_at"], name: "index_sessions_on_person_id_and_starts_at_and_ends_at", using: :btree
+  add_index "sessions", ["person_id"], name: "index_sessions_on_person_id", using: :btree
+  add_index "sessions", ["starts_at"], name: "index_sessions_on_starts_at", using: :btree
 
 end
