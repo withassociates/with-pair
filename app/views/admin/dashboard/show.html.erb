@@ -40,8 +40,11 @@
         <% next if s.new_record? %>
 
         <tr class="<%= s.state %>">
-          <td>
+          <td class="dashboard-gravatars">
             <%= gravatar_tag s.person.email, size: 128, class: "gravatar" %>
+            <% if b = s.booking %>
+              <%= gravatar_tag b.email, size: 128, class: "gravatar" %>
+            <% end %>
           </td>
           <td>
             <%= session_time_tags s %>
@@ -83,8 +86,9 @@
         <% next if s.new_record? %>
 
         <tr class="<%= s.state %>">
-          <td>
+          <td class="dashboard-gravatars">
             <%= gravatar_tag s.person.email, size: 128, class: "gravatar" %>
+            <%= gravatar_tag s.booking.email, size: 128, class: "gravatar" %>
           </td>
           <td>
             <%= session_time_tags s %>

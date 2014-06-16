@@ -19,3 +19,14 @@
     }
   }
 }
+
+.dashboard-gravatars {
+  .gravatar {
+    display: inline-block;
+    margin: 0;
+
+    &:nth-child(1) {
+      margin-right: -20px;
+    }
+  }
+}
