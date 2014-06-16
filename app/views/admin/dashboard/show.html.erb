@@ -51,7 +51,7 @@
           </td>
           <td>
             <% if b = s.booking %>
-              <%= mail_to b.email, b.name %>
+              <%= link_to s.booking.name, session_booking_path(s, s.booking) %>
             <% else %>
               No one… yet
             <% end %>
@@ -94,7 +94,7 @@
             <%= session_time_tags s %>
           </td>
           <td>
-            <%= mail_to s.booking.email, s.booking.name %>
+            <%= link_to s.booking.name, session_booking_path(s, s.booking) %>
           </td>
           <td>
             <%= link_to "Details", session_booking_path(s, s.booking), class: "button good" %>
