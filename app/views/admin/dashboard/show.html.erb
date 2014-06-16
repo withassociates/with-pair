@@ -29,30 +29,36 @@
   <table>
     <thead>
       <tr>
-        <th colspan="2">Who?</th>
+        <th>&nbsp;</th>
         <th>When?</th>
-        <th>What?</th>
+        <th>Who?</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <% @sessions.upcoming.each do |s| %>
         <% next if s.new_record? %>
+
         <tr class="<%= s.state %>">
           <td>
             <%= gravatar_tag s.person.email, size: 128, class: "gravatar" %>
           </td>
           <td>
-            <strong><%= s.person.name %></strong>
-          </td>
-          <td>
             <%= session_time_tags s %>
           </td>
           <td>
-            <%= s.person.skills %>
+            <% if b = s.booking %>
+              <%= mail_to b.email, b.name %>
+            <% else %>
+              No one… yet
+            <% end %>
           </td>
           <td>
-            <%= link_to "Remove", admin_session_destroy_path(s), class: "button", method: :delete %>
+            <% if b = s.booking %>
+              <%= link_to "Details", session_booking_path(s, b), class: "button good" %>
+            <% else %>
+              <%= link_to "Remove", admin_session_destroy_path(s), class: "button bad", method: :delete %>
+            <% end %>
           </td>
         </tr>
       <% end %>
@@ -65,34 +71,29 @@
   <table>
     <thead>
       <tr>
-        <th colspan="2">Who?</th>
+        <th>&nbsp;</th>
         <th>When?</th>
-        <th>What?</th>
+        <th>Who?</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <% @sessions.past.each do |s| %>
+        <% next if s.bookings.empty? %>
         <% next if s.new_record? %>
+
         <tr class="<%= s.state %>">
           <td>
             <%= gravatar_tag s.person.email, size: 128, class: "gravatar" %>
           </td>
           <td>
-            <strong><%= s.person.name %></strong>
-          </td>
-          <td>
             <%= session_time_tags s %>
           </td>
           <td>
-            <%= s.person.skills %>
+            <%= mail_to s.booking.email, s.booking.name %>
           </td>
           <td>
-            <% if s.bookings.any? %>
-              Booked :)
-            <% else %>
-              Not booked :(
-            <% end %>
+            <%= link_to "Details", session_booking_path(s, s.booking), class: "button good" %>
           </td>
         </tr>
       <% end %>

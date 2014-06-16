@@ -10,11 +10,11 @@ class Session < ActiveRecord::Base
   validates :ends_at, presence: true
 
   def self.upcoming
-    where('starts_at >= NOW()').order('starts_at ASC')
+    where(['starts_at >= ?', Time.now]).order('starts_at ASC')
   end
 
   def self.past
-    where('starts_at < NOW()').order('starts_at DESC')
+    where(['starts_at < ?', Time.now]).order('starts_at DESC')
   end
 
   def state
@@ -27,5 +27,9 @@ class Session < ActiveRecord::Base
 
   def bookable?
     state == BOOKABLE
+  end
+
+  def booking
+    bookings.active.first
   end
 end
