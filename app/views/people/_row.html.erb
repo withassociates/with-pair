@@ -1,0 +1,23 @@
+<tr>
+  <td class="person-details">
+    <table>
+      <tr>
+        <td class="person-avatar">
+          <%= gravatar_tag person.email, size: 128, class: "gravatar" %>
+        </td>
+        <td class="person-name">
+          <strong><%= person.name %></strong>
+          <br><%= person.skills %>
+        </td>
+      </tr>
+    </table>
+  </td>
+
+  <td class="person-sessions">
+    <table>
+      <% person.sessions.each do |s| %>
+        <%= render_session_row(s: s) %>
+      <% end %>
+    </table>
+  </td>
+</tr>

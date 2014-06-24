@@ -18,6 +18,10 @@ module ApplicationHelper
     render("sessions/row", SESSION_ROW_DEFAULTS.merge(options))
   end
 
+  def render_person_row(options = {})
+    render("people/row", options)
+  end
+
   def link_to_screenhero(text, url, options = {})
     link_to(text, url || DEFAULT_SCREENHERO_URL, options)
   end

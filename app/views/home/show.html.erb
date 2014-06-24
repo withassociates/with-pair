@@ -12,15 +12,13 @@
   <table>
     <thead>
       <tr>
-        <th colspan="2">Who?</th>
+        <th>Who?</th>
         <th>When?</th>
-        <th>What?</th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
-      <% @sessions.each do |s| %>
-        <%= render_session_row(s: s) %>
+      <% @people.each do |person| %>
+        <%= render_person_row(person: person) %>
       <% end %>
     </tbody>
   </table>

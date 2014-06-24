@@ -1,22 +1,13 @@
 <tr class="<%= s.state %>">
   <td>
-    <%= gravatar_tag s.person.email, size: 128, class: "gravatar" %>
-  </td>
-  <td>
-    <strong><%= s.person.name %></strong>
-  </td>
-  <td>
     <%= session_time_tags s %>
-  </td>
-  <td>
-    <%= s.person.skills %>
   </td>
   <td>
     <% if display_book_button %>
       <% if s.bookable? %>
         <%= link_to "Book Session", new_session_booking_path(s), class: "button" %>
       <% else %>
-        <div class="booked">Booked</div>
+        <span class="button disabled">Booked</span>
       <% end %>
     <% end %>
   </td>
