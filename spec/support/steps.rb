@@ -8,8 +8,8 @@ end
 
 step "there is a session available today with Tom" do
   tom = Person.create(
-    name: 'Tom Marshall',
-    email: 'thomas@withassociates.com',
+    name: 'Tom Example',
+    email: 'tom@example.com',
     skills: 'Javascript, CSS, Ruby'
   )
   Session.create(
@@ -43,7 +43,7 @@ end
 
 step "Tom gets an email notification of the booking" do
   email = ActionMailer::Base.deliveries.find { |delivery|
-    delivery.to.include?('thomas@withassociates.com')
+    delivery.to.include?('tom@example.com')
   }
   expect(email).not_to be_nil
   expect(email.decoded).to include('jo.smith')
@@ -62,6 +62,14 @@ end
 
 step "I fill in :field with :value" do |field, value|
   fill_in field, with: value
+end
+
+step "there is a person with email :email" do |email|
+  Person.create(
+    name: 'Example Person',
+    email: 'example@withassociates.com',
+    skills: 'Javascript, Testing'
+  )
 end
 
 step "I am signed in to Google as :email" do |email|
