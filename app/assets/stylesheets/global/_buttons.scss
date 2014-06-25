@@ -62,3 +62,12 @@
     }
   }
 }
+
+.disabled {
+  &:hover, & { background: transparentize(black, 0.95); }
+  &:after { display: none; }
+
+  padding-right: 1.25em;
+  text-align: center;
+  opacity: 0.5;
+}

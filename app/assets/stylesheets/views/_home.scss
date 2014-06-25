@@ -57,6 +57,21 @@
   a.icon:before { font-size: 16px; }
 }
 
+.person-details {
+  padding: 0 12px 0;
+  vertical-align: top;
+
+  table { margin: 0; }
+  tr { border-bottom: 0; }
+}
+
+.person-sessions {
+  padding: 0 0 0 12px;
+
+  table { margin: 0; }
+  tr:last-of-type { border-bottom: 0; }
+}
+
 @media (max-width: 767px) {
   td { display: block; }
 
@@ -93,4 +108,11 @@
   thead tr { border-top: 1px solid #dddddd; }
 
   .gravatar { width: 64px; }
+  .person-avatar { width: 64px; }
+
+  .person-sessions .button {
+    float: right;
+    box-sizing: border-box;
+    width: 160px;
+  }
 }
