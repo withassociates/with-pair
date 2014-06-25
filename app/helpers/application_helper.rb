@@ -1,7 +1,6 @@
 module ApplicationHelper
   DEFAULT_GRAVATAR_SIZE = 60
   DEFAULT_SCREENHERO_URL = "http://screenhero.com"
-  SESSION_ROW_DEFAULTS = { display_book_button: true }
 
   def gravatar_tag(email, options = {})
     size = options.fetch(:size) { DEFAULT_GRAVATAR_SIZE }
@@ -15,7 +14,7 @@ module ApplicationHelper
   end
 
   def render_session_row(options = {})
-    render("sessions/row", SESSION_ROW_DEFAULTS.merge(options))
+    render("sessions/row", options)
   end
 
   def render_person_row(options = {})

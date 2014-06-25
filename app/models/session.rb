@@ -18,7 +18,7 @@ class Session < ActiveRecord::Base
   end
 
   def state
-    if bookings.active.any?(&:persisted?)
+    if bookings.any?(&:active?)
       BOOKED
     else
       BOOKABLE
@@ -30,6 +30,6 @@ class Session < ActiveRecord::Base
   end
 
   def booking
-    bookings.active.first
+    bookings.find(&:active?)
   end
 end

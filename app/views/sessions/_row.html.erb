@@ -3,12 +3,10 @@
     <%= session_time_tags s %>
   </td>
   <td>
-    <% if display_book_button %>
-      <% if s.bookable? %>
-        <%= link_to "Book Session", new_session_booking_path(s), class: "button" %>
-      <% else %>
-        <span class="button disabled">Booked</span>
-      <% end %>
+    <% if s.bookable? %>
+      <%= link_to "Book Session", new_session_booking_path(s), class: "button" %>
+    <% else %>
+      <span class="button disabled">Booked</span>
     <% end %>
   </td>
 </tr>

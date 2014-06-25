@@ -11,4 +11,8 @@ class Booking < ActiveRecord::Base
   def given_name
     name[/\w+/]
   end
+
+  def active?
+    cancelled_at.nil? && persisted?
+  end
 end
