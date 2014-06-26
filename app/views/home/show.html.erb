@@ -22,6 +22,21 @@
       <% end %>
     </tbody>
   </table>
+
+  <div class="negotiate-time">
+    <h3>Can't find a suitable time?</h3>
+    <p>Get in touch! We'll work out a time that's good for us both.</p>
+
+    <div class="negotiate-time-fields">
+      <select id="contact-person">
+        <option selected="selected" value="hello@withassociates.com">Choose a Pair partner</option>
+        <% @with.each do |person| %>
+          <option value="<%= person.email %>"><%= person.name %> (<%= person.skills %>)</option>
+        <% end %>
+      </select>
+      <a href="#" id="negotiate-button" class="button">Get in touch</a>
+    </div>
+  </div>
 </div>
 
 <div class="container">
