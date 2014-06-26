@@ -72,6 +72,46 @@
   tr:last-of-type { border-bottom: 0; }
 }
 
+.negotiate-time {
+  text-align: center;
+
+  select, .button {
+    display: inline-block;
+    margin: 0 10px;
+  }
+
+  select {
+    width: auto;
+    padding-right: 40px;
+    border: 3px solid #f2f2f2;
+    background: #F2F2F2;
+    background-image: asset-url('down-arrow.png');
+    background-position: 97% center;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+  }
+
+  .button {
+    width: 200px;
+  }
+
+  .negotiate-time-fields {
+    text-align: center;
+  }
+
+  @media (max-width: 689px) {
+    .select-skills {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 958px) {
+  #negotiate-button {
+    margin-top: 20px;
+  }
+}
+
 @media (max-width: 767px) {
   td { display: block; }
 
