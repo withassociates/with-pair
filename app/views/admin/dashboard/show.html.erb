@@ -82,7 +82,7 @@
     </thead>
     <tbody>
       <% @sessions.past.each do |s| %>
-        <% next if s.bookings.empty? %>
+        <% next if s.booking.nil? %>
         <% next if s.new_record? %>
 
         <tr class="<%= s.state %>">
