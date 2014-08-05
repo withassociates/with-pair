@@ -1,0 +1,33 @@
+<div class="container">
+  <h2>All Past Sessions (<%= @bookings.count %>)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>&nbsp;</th>
+        <th>Who?</th>
+        <th>When?</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @bookings.each do |b| %>
+        <tr>
+          <td class="dashboard-gravatars">
+            <%= gravatar_tag b.session.person.email, size: 128, class: "gravatar" %>
+            <%= gravatar_tag b.email, size: 128, class: "gravatar" %>
+          </td>
+          <td>
+            <b><%= b.session.person.name %></b> &amp;
+            <b><%= b.name %></b>
+          </td>
+          <td>
+            <%= session_time_tags b.session %>
+          </td>
+          <td>
+            <%= link_to "Details", session_booking_path(b.session, b), class: "button good" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

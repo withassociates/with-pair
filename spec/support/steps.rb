@@ -88,6 +88,51 @@ step "it is :time" do |time|
   Timecop.freeze(time)
 end
 
+step "I am signed in" do
+  person = Person.create(
+    name: 'Example Person',
+    email: 'example@withassociates.com',
+    skills: 'Javascript, Testing'
+  )
+
+  OmniAuth.config.add_mock(:google_apps, {
+    'info' => {
+      'email' => person.email
+    }
+  })
+end
+
+step "there have been some bookings" do
+  person = Person.first
+
+  person.sessions.create!(
+    starts_at: 2.weeks.ago,
+    ends_at: 2.weeks.ago + 30.minutes
+  )
+  person.sessions.create!(
+    starts_at: 1.week.ago,
+    ends_at: 1.week.ago + 30.minutes
+  )
+
+  person.sessions.first.bookings.create!(
+    name: 'Jo Smith',
+    email: 'jo.smith@example.com',
+    project: 'Need help promoting our small business online.'
+  )
+
+  person.sessions.last.bookings.create!(
+    name: 'Flo Green',
+    email: 'flo.green@example.com',
+    project: 'Help setting up a Rails production server.'
+  )
+end
+
+step "I see a list of past bookings" do
+  Booking.past.each do |booking|
+    expect(page).to have_content booking.name
+  end
+end
+
 placeholder :time do
   match /(.+)/ do |t|
     Chronic.parse(t)

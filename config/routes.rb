@@ -15,6 +15,7 @@ Pair::Application.routes.draw do
     resources :sessions, only: [:create] do
       get 'destroy' => 'sessions#destroy', as: :destroy
     end
+    get 'history' => 'history#show', as: :history
   end
 
   match 'auth/google_apps/callback' => 'callbacks#handle', via: [:get, :post]
