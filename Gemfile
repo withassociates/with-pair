@@ -18,6 +18,7 @@ group :production do
 end
 
 group :development do
+  gem 'dotenv-rails'          , '~> 0.11.0'
   gem 'foreman'               , '~> 0.63.0' , require: false
   gem 'guard-rspec'           , '~> 4.2.0'  , require: false
   gem 'powder'                , '~> 0.2.1'
