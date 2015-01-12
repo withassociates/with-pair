@@ -7,11 +7,23 @@
       <%= gravatar_tag @booking.email, size: 200, class: "img-circle gravatar" %>
     </div>
 
-    <div class="row">
+    <div class="row add-to-calendar-row">
       <div class="column">
         <h2>Thanks <%= @booking.given_name %>!<br>
           <%= @person.given_name %></strong> will be in touch
           <%= session_start_tag @session %>.</h2>
+
+        <%= link_to session_booking_path(session_id: @session.id, id: @booking.id), class: 'addthisevent' do %>
+          Add to Calendar
+          <span class="_start"><%= calendar_event_time(@session.starts_at) %></span>
+          <span class="_end"><%= calendar_event_time(@session.ends_at) %></span>
+          <span class="_zonecode">35</span>
+          <span class="_summary">Pair session with <%= @person.name %></span>
+          <span class="_description"><%= @booking.project %></span>
+          <span class="_organizer"><%= @person.name %></span>
+          <span class="_organizer_email"><%= @person.email %></span>
+          <span class="_date_format">DD/MM/YYYY</span>
+        <% end %>
 
         <p><strong>Your Project:</strong><br>
           <%= @booking.project %></p>
@@ -37,3 +49,12 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript" src="https://addthisevent.com/libs/1.5.8/ate.min.js"></script>
+<script type="text/javascript">
+  addthisevent.settings({
+    hotmail: { show: false },
+    facebook: { show: false },
+    dropdown: { order: "ical,google,yahoo,outlook"}
+  });
+</script>
