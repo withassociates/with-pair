@@ -4,6 +4,7 @@ development:
   database: pair_development
   pool: 5
   password:
+  host: localhost
 
 test:
   adapter: postgresql
@@ -11,6 +12,7 @@ test:
   database: pair_test
   pool: 5
   password:
+  host: localhost
 
 production:
   adapter: postgresql
@@ -18,3 +20,4 @@ production:
   database: pair_production
   pool: 5
   password:
+  host: localhost
