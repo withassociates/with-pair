@@ -33,6 +33,14 @@ step "I fill in my contact details" do
   fill_in "Email", with: "jo.smith@example.com"
 end
 
+step "I fill in my contact details and the hidden field" do
+  save_and_open_page
+  find(:xpath, "//input[@id='winnie_field']").set "Anything"
+  fill_in "Name", with: "Jo Smith"
+  fill_in "Skype ID", with: "jo.smith"
+  fill_in "Email", with: "jo.smith@example.com"
+end
+
 step "I describe what I want to work on" do
   fill_in "Project", with: "Foo bar " * 10
 end
@@ -131,6 +139,14 @@ step "I see a list of past bookings" do
   Booking.past.each do |booking|
     expect(page).to have_content booking.name
   end
+end
+
+step "I receive a 422 response code" do
+  expect(page.status_code).to eq 422
+end
+
+step "no booking is saved" do
+  expect(Booking.count).to eq 0
 end
 
 placeholder :time do

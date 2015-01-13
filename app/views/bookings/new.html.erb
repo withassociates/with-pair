@@ -6,6 +6,7 @@
     <h2>Your booking with <%= @person.given_name %> for <%= @session.starts_at.strftime('%A %-I:%M') %>–<%= @session.ends_at.strftime('%-I:%M%P') %></h2>
 
     <%= form_for_booking do |f| %>
+      <%= f.text_field :winnie, id: "winnie_field" %>
       <%= f.field :name, required: true, autofocus: true %>
       <%= f.field :email, required: true %>
       <%= f.field :skype %>

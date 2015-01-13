@@ -11,6 +11,10 @@ class BookingsController < ApplicationController
   end
 
   def create
+    if params[:booking][:winnie].present?
+      head :unprocessable_entity and return
+    end
+
     @session = Session.find(params[:session_id])
     @person = @session.person
     @booking = @session.bookings.new(booking_params)
