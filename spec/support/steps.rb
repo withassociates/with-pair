@@ -35,7 +35,7 @@ end
 
 step "I fill in my contact details and the hidden field" do
   save_and_open_page
-  find(:xpath, "//input[@id='winnie_field']").set "Anything"
+  find(:xpath, "//input[@id='winnie']").set "Anything"
   fill_in "Name", with: "Jo Smith"
   fill_in "Skype ID", with: "jo.smith"
   fill_in "Email", with: "jo.smith@example.com"
