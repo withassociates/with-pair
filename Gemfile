@@ -10,6 +10,7 @@ gem 'rails'                , '~> 4.2.0'
 gem 'sass-rails'           , '~> 5.0.0'
 gem 'uglifier'             , '~> 2.7.0'
 gem 'unicorn'              , '~> 4.8.0'
+gem 'skylight'
 
 group :production do
   gem 'rails_12factor', '~> 0.0.2'
