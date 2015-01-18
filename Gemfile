@@ -6,7 +6,7 @@ gem 'highline'             , '~> 1.6.0' , require: false
 gem 'omniauth-google-apps' , '~> 0.1.0'
 gem 'pg'                   , '~> 0.18.1'
 gem 'pry-rails'            , '~> 0.3.0'
-gem 'rails'                , '~> 4.1.8'
+gem 'rails'                , '~> 4.2.0'
 gem 'sass-rails'           , '~> 5.0.0'
 gem 'uglifier'             , '~> 2.6.0'
 gem 'unicorn'              , '~> 4.8.0'
