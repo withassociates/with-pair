@@ -1,4 +1,6 @@
 # Pair With Associates
+
+[![Build Status](https://travis-ci.org/withassociates/with-pair.svg?branch=master)](https://travis-ci.org/withassociates/with-pair)
 [![Dependency Status](https://gemnasium.com/withassociates/with-pair.svg)](https://gemnasium.com/withassociates/with-pair)
 
 Need a hand working through a tricky programming problem?
