@@ -29,3 +29,7 @@ group :test do
   gem 'turnip', '~> 1.2.0'
   gem 'timecop', '~> 0.7.0'
 end
+
+group :development, :test do
+  gem 'rake', '~> 10.4.0'
+end
