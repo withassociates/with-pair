@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'bourbon'              , '~> 4.0.2'
+gem 'bourbon'              , '~> 4.1.0'
 gem 'chronic'              , '~> 0.10.0'
 gem 'highline'             , '~> 1.6.0' , require: false
 gem 'omniauth-google-apps' , '~> 0.1.0'
