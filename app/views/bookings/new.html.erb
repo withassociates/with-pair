@@ -5,6 +5,20 @@
     <%= gravatar_tag @person.email, size: 200, class: "img-circle gravatar" %>
     <h2>Your booking with <%= @person.given_name %> for <%= @session.starts_at.strftime('%A %-I:%M') %>–<%= @session.ends_at.strftime('%-I:%M%P') %></h2>
 
+    <div class="little-notice">
+      <p><b>A quick note before you book:</b></p>
+      <p>
+        These Pair sessions are for free advice.<br>
+        We won’t try to sell you our services.<br>
+        If you’d like to commission With Associates for your project<br>
+        please get in touch through the traditional means:
+      </p>
+      <p>
+        <a href="tel:+442079234757">+44 20 7923 4757</a><br>
+        <a href="mailto:hello@withassociates.com">hello@withassociates.com</a>
+      </p>
+    </div>
+
     <%= form_for_booking do |f| %>
       <%= f.text_field :winnie, id: 'winnie' %>
       <%= f.field :name, required: true, autofocus: true %>
