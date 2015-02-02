@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140610052642) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bookings", force: true do |t|
+  create_table "bookings", force: :cascade do |t|
     t.integer  "session_id"
     t.string   "name",         null: false
     t.string   "skype"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20140610052642) do
   add_index "bookings", ["session_id", "cancelled_at"], name: "index_bookings_on_session_id_and_cancelled_at", using: :btree
   add_index "bookings", ["session_id"], name: "index_bookings_on_session_id", using: :btree
 
-  create_table "people", force: true do |t|
+  create_table "people", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
     t.string   "skills"
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20140610052642) do
     t.string   "screenhero_email"
   end
 
-  create_table "sessions", force: true do |t|
+  create_table "sessions", force: :cascade do |t|
     t.integer  "person_id"
     t.datetime "starts_at"
     t.datetime "ends_at"
