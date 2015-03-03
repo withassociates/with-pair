@@ -18,5 +18,5 @@ Pair::Application.routes.draw do
     get 'history' => 'history#show', as: :history
   end
 
-  match 'auth/google_apps/callback' => 'callbacks#handle', via: [:get, :post]
+  get '/auth/google_apps/callback' => 'callbacks#handle'
 end
