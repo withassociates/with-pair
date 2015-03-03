@@ -23,6 +23,7 @@ group :development do
   gem 'guard-rspec'           , '~> 4.5.0'  , require: false
   gem 'powder'                , '~> 0.3.0'  , require: false
   gem 'spring-commands-rspec' , '~> 1.0.0'  , require: false
+  gem 'byebug'
 end
 
 group :test do
