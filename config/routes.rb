@@ -18,5 +18,5 @@ Pair::Application.routes.draw do
     get 'history' => 'history#show', as: :history
   end
 
-  get '/auth/google_apps/callback' => 'callbacks#handle'
+  get '/auth/google_oauth2/callback' => 'callbacks#handle'
 end
