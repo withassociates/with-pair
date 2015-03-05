@@ -2,7 +2,7 @@
   <div class="banner yellow"></div>
 
   <div class="container">
-    <%= gravatar_tag @person.email, size: 200, class: "img-circle gravatar" %>
+    <%= gravatar_tag @person.email, :wa, size: 200, class: "img-circle gravatar" %>
     <h2>Your booking with <%= @person.given_name %> for <%= @session.starts_at.strftime('%A %-I:%M') %>–<%= @session.ends_at.strftime('%-I:%M%P') %></h2>
 
     <div class="little-notice">

@@ -1,16 +1,22 @@
 module ApplicationHelper
   DEFAULT_GRAVATAR_SIZE = 60
   DEFAULT_SCREENHERO_URL = "http://screenhero.com"
+  GRAVATAR_FALLBACKS = {
+    wa: 'gravatar_fallback_wa.png',
+    you: 'gravatar_fallback_you.png',
+    other: nil,
+  }
 
-  def gravatar_tag(email, options = {})
+  def gravatar_tag(email, fallback, options = {})
     size = options.fetch(:size) { DEFAULT_GRAVATAR_SIZE }
+    fallback_image = GRAVATAR_FALLBACKS.fetch(fallback)
     options[:size] = "#{size}x#{size}"
-    image_tag(gravatar_url(email, size), options)
+    image_tag(gravatar_url(email, fallback_image, size), options)
   end
 
-  def gravatar_url(email, size = DEFAULT_GRAVATAR_SIZE)
+  def gravatar_url(email, fallback_image, size = DEFAULT_GRAVATAR_SIZE)
     md5 = Digest::MD5.hexdigest(email)
-    "http://www.gravatar.com/avatar/#{md5}.jpg?s=#{size}&d=#{asset_url 'gravatar_fallback.png'}"
+    "http://www.gravatar.com/avatar/#{md5}.jpg?s=#{size}&d=#{asset_url fallback_image}"
   end
 
   def render_session_row(options = {})
