@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
 
 gem 'bourbon'              , '~> 4.1.0'
 gem 'chronic'              , '~> 0.10.0'
