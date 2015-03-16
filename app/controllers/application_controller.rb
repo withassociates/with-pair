@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   def require_authentication
     if current_person.nil?
       session[:return_to] = request.path
-      redirect_to '/auth/google_apps'
+      redirect_to '/auth/google_oauth2'
     end
   end
 

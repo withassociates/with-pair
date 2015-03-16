@@ -1,6 +1,6 @@
 class Admin::AuthController < ApplicationController
   def new
-    redirect_to '/auth/google_apps'
+    redirect_to '/auth/google_oauth2'
   end
 
   def destroy

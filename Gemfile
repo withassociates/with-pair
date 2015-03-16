@@ -1,15 +1,16 @@
 source 'https://rubygems.org'
+ruby '2.2.0'
 
-gem 'bourbon'              , '~> 4.1.0'
-gem 'chronic'              , '~> 0.10.0'
-gem 'highline'             , '~> 1.6.0' , require: false
-gem 'omniauth-google-apps' , '~> 0.1.0'
-gem 'pg'                   , '~> 0.18.1'
-gem 'pry-rails'            , '~> 0.3.0'
-gem 'rails'                , '~> 4.2.0'
-gem 'sass-rails'           , '~> 5.0.0'
-gem 'uglifier'             , '~> 2.7.0'
-gem 'unicorn'              , '~> 4.8.0'
+gem 'bourbon'               , '~> 4.1.0'
+gem 'chronic'               , '~> 0.10.0'
+gem 'highline'              , '~> 1.6.0' , require: false
+gem 'omniauth-google-oauth2', '~> 0.2.6'
+gem 'pg'                    , '~> 0.18.1'
+gem 'pry-rails'             , '~> 0.3.0'
+gem 'rails'                 , '~> 4.2.0'
+gem 'sass-rails'            , '~> 5.0.0'
+gem 'uglifier'              , '~> 2.7.0'
+gem 'unicorn'               , '~> 4.8.0'
 gem 'skylight'
 
 group :production do
@@ -22,6 +23,7 @@ group :development do
   gem 'guard-rspec'           , '~> 4.5.0'  , require: false
   gem 'powder'                , '~> 0.3.0'  , require: false
   gem 'spring-commands-rspec' , '~> 1.0.0'  , require: false
+  gem 'byebug'
 end
 
 group :test do

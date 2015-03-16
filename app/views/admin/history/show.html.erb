@@ -13,8 +13,8 @@
       <% @bookings.each do |b| %>
         <tr>
           <td class="dashboard-gravatars">
-            <%= gravatar_tag b.session.person.email, size: 128, class: "gravatar" %>
-            <%= gravatar_tag b.email, size: 128, class: "gravatar" %>
+            <%= gravatar_tag b.session.person.email, :wa, size: 128, class: "gravatar" %>
+            <%= gravatar_tag b.email, :other, size: 128, class: "gravatar" %>
           </td>
           <td>
             <b><%= b.session.person.name %></b> &amp;
