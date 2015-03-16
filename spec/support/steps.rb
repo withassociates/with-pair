@@ -77,7 +77,7 @@ step "there is a person with email :email" do |email|
 end
 
 step "I am signed in to Google as :email" do |email|
-  OmniAuth.config.add_mock(:google_apps, {
+  OmniAuth.config.add_mock(:google_oauth2, {
     'info' => {
       'email' => email
     }
@@ -99,7 +99,7 @@ step "I am signed in" do
     skills: 'Javascript, Testing'
   )
 
-  OmniAuth.config.add_mock(:google_apps, {
+  OmniAuth.config.add_mock(:google_oauth2, {
     'info' => {
       'email' => person.email
     }
