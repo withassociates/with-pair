@@ -1,8 +1,0 @@
-machine:
-  ruby:
-    version: 2.1.2
-deployment:
-  production:
-    branch: master
-    heroku:
-      appname: pair-withassociates

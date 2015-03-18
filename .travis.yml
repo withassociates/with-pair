@@ -5,3 +5,5 @@ before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
   - cp config/database.yml.travis config/database.yml
   - bundle exec rake db:setup RAILS_ENV=test
+
+script: bundle exec rspec
