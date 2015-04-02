@@ -4,6 +4,6 @@ module BookingsHelper
   end
 
   def calendar_event_time(time)
-    time.strftime("%d-%m-%Y %H:%M:%S")
+    time.utc.strftime("%d-%m-%Y %H:%M:%S")
   end
 end
