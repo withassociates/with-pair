@@ -7,3 +7,5 @@ before_script:
   - bundle exec rake db:setup RAILS_ENV=test
 
 script: bundle exec rspec
+
+sudo: false
