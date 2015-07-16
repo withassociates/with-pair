@@ -59,9 +59,8 @@
           <td>
             <% if b = s.booking %>
               <%= link_to "Details", session_booking_path(s, b), class: "button good" %>
-            <% else %>
-              <%= link_to "Remove", admin_session_destroy_path(s), class: "button bad", method: :delete %>
             <% end %>
+            <%= link_to "Remove", admin_session_destroy_path(s), class: "button bad", method: :delete %>
           </td>
         </tr>
       <% end %>
